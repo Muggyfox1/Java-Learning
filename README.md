@@ -1,2 +1,2 @@
 # Java Learning
- Various projects in Java that I've made to learn Java.
+ Various small projects/apps I made while learning Java.
