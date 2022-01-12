@@ -2,7 +2,6 @@ import java.io.*;
 import java.awt.*;
 import java.awt.image.*;
 import javax.imageio.*;
-import java.io.*;
 
 public class ConsoleArtConverter {
 
@@ -32,8 +31,6 @@ public class ConsoleArtConverter {
 		                  "Result.png",
 		                  "Result.txt"};
 		
-		
-		
 		BufferedImage img = null;
 		try {
 			img = ImageIO.read(new File(paths[0]));
@@ -49,7 +46,7 @@ public class ConsoleArtConverter {
 		for(int i = 0; i < Height; i++) {
 			for(int j = 0; j < Width; j++) {
 				Color c = CalculateClosestColor(new Color(img.getRGB(j,i)));
-				
+				System.out.println(i + " " + j);
 				g.setColor(c);
 				g.fillRect(j, i, 1, 1);
 			}
@@ -91,57 +88,8 @@ public class ConsoleArtConverter {
 			}
 			
 		}
-		switch(Closest) {
-			case 0:
-				s += "b";
-				break;	
-			case 1:
-				s += "u";
-				break;
-			case 2:
-				s += "e";
-				break;
-			case 3:
-				s += "c";
-				break;
-			case 4:
-				s += "d";
-				break;
-			case 5:
-				s += "m";
-				break;
-			case 6:
-				s += "k";
-				break;
-			case 7:
-				s += "a";
-				break;
-			case 8:
-				s += "z";
-				break;
-			case 9:
-				s += "l";
-				break;
-			case 10:
-				s += "g";
-				break;
-			case 11:
-				s += "x";
-				break;
-			case 12:
-				s += "r";
-				break;
-			case 13:
-				s += "v";
-				break;
-			case 14:
-				s += "y";
-				break;
-			case 15:
-				s += "w";
-				break;
-				
-		}
+		String CString = "buecdmkazlgxrvyw";
+		s += CString.charAt(Closest);
 		return CColors[Closest];
 	}
 }
