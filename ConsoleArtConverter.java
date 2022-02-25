@@ -74,14 +74,18 @@ public class ConsoleArtConverter {
 	
 	public static Color CalculateClosestColor(Color c){
 		int Closest = 0;
-		double CDist = 5000;
+		double CDist = -1;
 		
 		for(int k = 0; k < CColors.length; k++){
 
-			double Dist = Math.abs(Math.sqrt(Math.pow(c.getRed() - CColors[k].getRed(),2) + 
+			double Dist = Math.abs((Math.pow(c.getRed() - CColors[k].getRed(),2) + 
 					Math.pow(c.getBlue() - CColors[k].getBlue(),2) + 
 					Math.pow(c.getGreen() - CColors[k].getGreen(),2)));
 			
+			if(CDist == -1){
+				CDist = Dist;
+			}
+
 			if(Dist < CDist) {
 				Closest = k;
 				CDist = Dist;
