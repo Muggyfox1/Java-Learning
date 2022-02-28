@@ -1,3 +1,5 @@
 #Ignore files...
 /Java-Learning.iml
 *.class
+/.idea/
+/out/
